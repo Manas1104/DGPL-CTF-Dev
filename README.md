@@ -35,3 +35,32 @@
 - The script includes a deliberately-vulnerable `naive_verify` function to demonstrate how verifiers can be misconfigured.
 - The report (`report.pdf`) covers recommendations and references to fix each vulnerability.
 
+
+
+
+
+# Secure API (FastAPI)
+
+
+Production‑ready basics for a secure auth flow using FastAPI + JWT with proper password hashing, token expiry, and input validation.
+
+
+## Features
+- **POST /register** — create user with **bcrypt** password hashing
+- **POST /login** — authenticate and issue **JWT** (HS256 or RS256)
+- **GET /profile** — protected route (requires `Authorization: Bearer <token>`)
+- Token claims: `sub`, `iat`, `nbf`, `exp`, `iss`, `aud`
+- Expiry configurable via `ACCESS_TOKEN_EXPIRE_MINUTES` (default **15**)
+- SQLite via SQLAlchemy (swap `DATABASE_URL` for Postgres/MySQL)
+- CORS middleware (tighten allowed origins in production)
+
+
+## Requirements
+- Python 3.10+
+
+
+## Setup
+```bash
+python -m venv .venv
+source .venv/bin/activate # Windows: .venv\Scripts\activate
+pip install -r requirements.txt

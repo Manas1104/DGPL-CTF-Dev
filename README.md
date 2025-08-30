@@ -33,13 +33,5 @@
 ## PoC scope & limitations (be explicit)
 - This is a local, educational PoC. It **does not** attack or interact with external servers.
 - The script includes a deliberately-vulnerable `naive_verify` function to demonstrate how verifiers can be misconfigured.
-- The PoC **does not** exploit RSA/EC algorithms programmatically (RSA key usage would require additional libraries and keys). Instead, it explains key-confusion attack vectors in text.
 - The report (`report.pdf`) covers recommendations and references to fix each vulnerability.
 
-## Safety and ethics
-Only run tests and attacks on systems you own or have explicit permission to test. Unauthorized security testing is illegal and unethical.
-
-## If anything is missing
-You asked for "everything proper — not half-arsed".
-- The PoC for forging with a weak secret and an alg=none simulation is included and runnable.
-- I did not include an actual vulnerable webserver or remote exploitation script (so there is no network harm). If you want a Flask-based vulnerable app for live demo, request it and I will add it (it will need Flask).
